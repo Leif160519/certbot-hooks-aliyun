@@ -48,8 +48,8 @@ certbot certonly \
 > 注意：命令中邮箱，域名和路径根据实际情况进行更改，详细参数解释请参看:[如何自签发免费通配符域名证书并实现自动化----Let's Encrypt][2]
 
 ## Q&A
-- 1. Q：`CERTBOT_DOMAIN`和`CERTBOT_VALIDATION`这两个变量如何传入certbot
-A：这两个变量是certbot在执行过程中生成的，`CERTBOT_DOMAIN`即为通配符域名，`CERTBOT_VALIDATION`即为TXT解析的记录值，是certbot随机生成的，这两个变量必须在hook脚本中获取，如果是在certbot命令外部通过传参方式传入hook脚本，是获取不到的，比如`--manual-auth-hook "/path/to/add.py ${CERTBOT_DOMAIN} ${CERTBOT_VALIDATION}"`
+- Q：`CERTBOT_DOMAIN`和`CERTBOT_VALIDATION`这两个变量如何传入certbot
+- A：这两个变量是certbot在执行过程中生成的，`CERTBOT_DOMAIN`即为通配符域名，`CERTBOT_VALIDATION`即为TXT解析的记录值，是certbot随机生成的，这两个变量必须在hook脚本中获取，如果是在certbot命令外部通过传参方式传入hook脚本，是获取不到的，比如`--manual-auth-hook "/path/to/add.py ${CERTBOT_DOMAIN} ${CERTBOT_VALIDATION}"`
 
 
 [1]: https://github.com/leif160519/python-alidns
